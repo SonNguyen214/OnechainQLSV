@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #375E97;
+    --white-color: #fff;
+    --text-color: #333;
+    --background-color: rgb(225, 229, 245);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background: url('https://hcmussh.edu.vn/img/news/27366933.jpg?t=27366934') no-repeat; */
+    background: var(--background-color);
+    position: relative;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.no_underline {
+    text-decoration: none;
+}
+
+.b_1_solid_grey {
+    border: 1px solid grey;
+}
+
+.center {
+    text-align: center;
+}
+
+.orange {
+    color: orange;
+}
+
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red;
+}
+
+.modal_content {
+    width: 320px;
+    position: absolute;
+    margin: auto;
+    background-color: #fff;
+    border: 1px solid gray;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    animation: showModal 1s linear;
+}
+
+.modal_content input {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+@keyframes showModal {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    25% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+button {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color) !important;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: transparent;
+}
+
+@media (max-width: 740px){
+    .modal_content {
+        width: 90%;
+    }
+}
+
+select,
+option {
+   width: 200px;
+   height: 30px;
+   outline: none;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid grey;
+    background-color: transparent;
+}
+
+small {
+    color: red;
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}

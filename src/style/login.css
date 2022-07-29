@@ -1,0 +1,121 @@
+.login {
+    width: 50%;
+    height: 600px;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid gray;
+    background-color: #fff;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    justify-content: unset;
+    box-shadow: 1px 1px 3px 1px;
+    border-radius: 10px;
+}
+
+.leftLogin {
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.leftLogin h3, .leftLogin h1 {
+    color: #fff;
+    margin-top: 20px;
+}
+
+.rightLogin {
+    text-align: left;
+    padding: 20px;
+    width: 70%;
+}
+
+.rightLogin span {
+    display: block;
+}
+
+.rightLogin h2 {
+    margin: 0;
+}
+
+.rightLogin input, .rightLogin button {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 10px;
+    margin: 5px 0px;
+    font-size: 16px;
+    outline: none;
+}
+
+.rightLogin input {
+    border:1px solid grey ;
+}
+
+
+.rightLogin input:focus {
+    border: 1px solid var(--primary-color);
+    box-shadow: 1px 1px 3px 1px;
+}
+
+.rightLogin button {
+    width: 150px;
+    cursor: pointer;
+    margin-top: 0;
+    border: none;
+    color: var(--white-color);
+}
+
+.rightLogin p {
+    text-align: left;
+    cursor: pointer;
+}
+
+.rightLogin p:hover {
+    color: blue;
+}
+
+.rightLogin button:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.modal_content button {
+    margin-top: 10px;
+}
+
+@media (max-width: 740px){
+    .login{
+        width: 90%;
+        display: block;
+    }
+
+    .leftLogin {
+        width: 100%;
+    }
+
+    .rightLogin {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .rightLogin span {
+        text-align: left;
+    }
+    
+    .rightLogin span:last-child {
+        text-align: center;
+    }
+
+    .login .imageLogin img {
+        display: none;
+    }
+
+    .modalLoginError .modal_content {
+        width: 250px;
+    }
+
+}

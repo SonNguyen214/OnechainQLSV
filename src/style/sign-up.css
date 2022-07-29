@@ -1,0 +1,130 @@
+.sign_up {
+    width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid gray;
+    padding: 20px;
+    position: relative;
+    box-shadow: 1px 1px 3px 1px;
+    text-align: center;
+    border-radius: 5px;
+    animation: showAddStudent 0.3s ease-in;
+}
+
+@keyframes showAddStudent {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.sign_up h2 {
+    color: var(--primary-color);
+    margin: auto;
+    border-radius: 50%;
+    padding: 10px;
+    padding-top: 0;
+    text-align: center;
+}
+
+.sign_up input, .sign_up button {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.sign_up select,
+.sign_up option {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px 10px;
+    border: none;
+    border: 1px solid grey;
+    outline: none;
+    border-radius: 5px;
+}
+
+.sign_up input {
+    border: 1px solid gray;
+    margin-top: 5px;
+}
+
+.sign_up small {
+    color: red;
+    text-align: left;
+    display: block;
+}
+
+.sign_up input:focus {
+    border-bottom: 1px solid var(--primary-color);
+    box-shadow: 1px 1px 3px 1px;
+    
+}
+
+.sign_up button {
+    width: 150px;
+    cursor: pointer;
+    margin: 10px;
+    margin-top: 20px;
+    border: none;
+    color: var(--white-color);
+}
+
+.sign_up button:hover {
+    color: var(--primary-color);
+}
+
+.sign_up span {
+    margin: 10px 5px 0 5px;
+    font-size: 30px;
+}
+
+.sign_up p {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+
+.sign_up p:last-child {
+    margin-bottom: 0;
+    text-align: center;
+}
+.modal_content button {
+    border: none;
+    border-radius: 5px;
+    padding: 7px 10px;
+    margin: 5px 0px;
+    outline: none;
+    width: 150px;
+    cursor: pointer;
+    margin: 10px;
+    border: none;
+    background-color:  var(--primary-color);
+    color: var(--white-color);
+}
+
+@media (max-width: 740px){
+    .sign_up {
+        width: 90%;
+    }
+
+    .sign_up button {
+        width: 100px;
+    }
+
+    .sign_up h2 {
+        width: auto;
+    }
+
+    .modal_content {
+        width: 250px;
+    }
+
+}

@@ -1,0 +1,669 @@
+.home_page {
+    height: auto;
+    position: relative;
+    word-spacing: 1px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(233, 231, 231);
+}
+
+.home_page .container {
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.home_page select, 
+.home_page option {
+    background-color: var(--white-color);
+}
+
+@keyframes moveRightIn {
+    from {
+        opacity: 0;
+        margin-right: -300px;
+    }
+
+    to {
+        opacity: 1;
+        margin-right: unset;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(231, 240, 245);
+    border-radius: 20px;
+}
+
+.home_page .option,
+form {
+    background-color: #f0f5f5;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.home_page .option {
+    height: 60px;
+    margin-bottom: 20px;
+    position: fixed;
+    background-color: white;
+    border-bottom: 1px solid var(--primary-color);
+    align-items: center;
+}
+
+.home_page .searchByCode {
+    border-bottom: 1px solid grey;
+}
+
+.home_page .searchByCode:focus {
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.home_page .option .LogOut {
+    margin-bottom: 0;
+}
+
+.home_page form {
+    box-shadow: #fff 1px 1px 5px 2px;
+    width: auto;
+    max-width: 100%;
+    height: 470px;
+    padding: 20px;
+}
+
+.home_page form .pagination {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    color: #333;
+    transform: translateX(-50%);
+}
+
+.home_page form .pagination button {
+    color:  #333;
+}
+
+.home_page .btnSearchByCode {
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin-left: 10px;
+}
+
+.home_page .userImage h2 {
+    border-left: none;
+}
+
+.tableMobile {
+    display: none;
+}
+.home_page .option span {
+    margin-bottom: 0;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    padding: 5px 7px;
+    border-radius: 10px;
+    color: #fff;
+    transition: 0.3s;
+    border: 1px solid var(--primary-color);
+}
+
+.home_page .option span:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.home_page .updateUser button {
+    width: 100px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 0;
+    display: block;
+    /* background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat; */
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+}
+
+.home_page h2 {
+    margin-bottom: 10px;
+    border-left: 2px solid var(--primary-color);
+    padding-left: 10px;
+    animation: moveLeftIn 0.5s ease-in;
+    cursor: pointer;
+}
+
+.home_page h2 span {
+    color: var(--primary-color);
+    background-color: transparent;
+    padding: 5px;
+    border: 1px solid var(--primary-color);
+    margin-left: 5px;
+    transition: 0.3s;
+    font-size: 14px;
+    text-align: center;
+}
+
+.home_page h2 span:hover {
+    color: rgb(250, 86, 86);
+    border: 1px solid rgb(250, 86, 86);
+}
+
+.home_page .option input {
+    outline: none;
+    padding-bottom: 5px;
+    width: 63%;
+    border-bottom: 1px solid grey;
+}
+
+.home_page table {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.home_page thead {
+    background: rgb(117, 247, 252)
+}
+
+.home_page th,
+.home_page td {
+    /* border: 1px solid var(--primary-color); */
+    text-align: left;
+    padding: 0.7% 1.5%;
+}
+
+.home_page td {
+    animation: showTable 0.3s ease-in;
+}
+
+
+@keyframes showTable {
+    from {
+        padding: 0 1.5%;
+        opacity: 0;
+    }
+
+    to {
+        padding: 0.7% 1.5%;
+        ;
+        opacity: 1;
+    }
+}
+
+.home_page tr {
+    transition: 0.3s;
+    border:1px solid grey ;
+}
+
+.home_page tr:hover {
+    background-color: #fff;
+    box-shadow: 1px 1px 3px;
+}
+
+.home_page thead tr:not(hover) {
+    box-shadow: 1px 1px 3px;
+}
+
+.home_page thead tr:hover {
+    background: rgb(117, 247, 252); 
+}
+
+.home_page tbody {
+    font-weight: 400;
+}
+
+.home_page .filterStudent {
+    text-align: right;
+}
+
+.home_page .filterStudent select {
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid rgb(189, 188, 188);
+    margin: 10px;
+}
+
+.home_page form button {
+    padding: 5px 10px;
+    color: #ffffff;
+    font-size: 13px;
+    margin-left: 5px;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.home_page form .btnAdd {
+    width: 90px;
+    height: 35px;
+}
+.home_page button:hover {
+    background-color: transparent;
+    color: var(--primary-color)
+}
+
+.home_page .theme {
+    display: flex;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.home_page .theme div:first-child {
+    margin-left: 0;
+}
+
+.home_page .theme div {
+    padding: 4px 7px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 10px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.home_page .theme div:hover {
+    border: 1px solid red;
+    color: red;
+}
+
+.modalImage .modal_content button {
+    width: 100px;
+}
+
+.modal_logOut .modal_content {
+    padding: 20px;
+}
+
+.modal_logOut .modal_content button {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px;
+    transition: 0.3s;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid var(--primary-color);
+}
+
+.modalImage input {
+    border-bottom: 1px solid grey;
+    margin-top: 20px;
+}
+
+.modalImage button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 15px;
+    transition: 0.3s;
+    border: 1px solid var(--primary-color);
+}
+
+ img {
+    border-radius: 50%;
+}
+
+.home_page .modalImage input {
+    width: 100%;
+}
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+    display: none;
+}
+
+.center button {
+    width: 70px;
+    margin: 10px 10px 0 10px;
+}
+
+@keyframes showModal {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    25% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.home_page .gridStudent {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.home_page .item {
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    line-height: 1.5;
+    border-radius: 5px;
+    width: 190px;
+    border: 1px solid rgb(228, 224, 224);
+    box-shadow: 1px 1px 3px;
+    animation: showModal 1.5s ease-in;
+    transition: 0.3s;
+}
+
+.home_page .item:hover {
+    background-color: #fff;
+}
+
+.home_page .item img {
+    width: 70px;
+    height: 70px;
+}
+
+.home_page .item button {
+    width: 60px;
+}
+
+.home_page img {
+    width: 100px;
+    margin-bottom: 10px;
+    height: 100px;
+    margin: auto;
+}
+
+.studentDetail img {
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.modalDeltailStudent {
+    display: none;
+}
+
+.deleteStudent,
+.updateStudent,
+.updateUser,
+.modalLoginSuccess,
+.modalLoginError,
+.modalImage,
+.modal_logOut,
+.modalAddSuccess,
+.modalSiginErrorEmail,
+.addStudent,
+.studentDetail,
+.modalUpdateSuccess,
+.overlay {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal_logOut {
+    z-index: 4;
+}
+
+/* Modal Add Student */
+.addStudent .modal_content {
+    width: 400px;
+}
+
+.modalAddSuccess .modal_content {
+    width: 250px ;
+}
+
+.modalAddSuccess .modal_content button {
+    width: 80px;
+    display: inline;
+    margin: 0 10px;
+}
+
+.addStudent .modal_content input,
+.addStudent .modal_content select,
+.addStudent .modal_content option {
+    border-bottom: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none;
+    width: 100%;
+}
+
+.addStudent .modal_content select {
+    margin: 5px;
+}
+
+.addStudent .modal_content h2 {
+    color: var(--primary-color);
+    border-left: none;
+    cursor: unset;
+    margin-bottom: 20px
+}
+
+.addStudent .modal_content select:first-child {
+    margin-top: 10px;
+}
+
+.addStudent .modal_content small {
+    color: red;
+}
+
+/* Modal Update Student */
+.updateStudent h2,
+.deleteStudent h2 {
+    animation: unset;
+    background-color: transparent;
+    border-left: none;
+    color: var(--primary-color);
+}
+
+.updateStudent .modal_content {
+    width: 400px;
+    padding: 20px;
+}
+
+.updateStudent span {
+    position: absolute;
+    cursor: pointer;
+    top: 2px;
+    font-size: 20px;
+    right: 2px;
+    display: block;
+}
+
+.updateStudent small {
+    text-align: left;
+    color: red;
+    display: block;
+    margin-left: 10px;
+}
+
+.updateStudent input,
+.updateStudent button,
+.updateStudent select {
+    width: 98%;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    margin-bottom: 0;
+    padding: 7px 10px;
+    outline: none;
+    border-bottom: 1px solid grey;
+}
+
+.updateStudent select {
+    padding-bottom: unset;
+    margin: 7px;
+}
+
+.updateStudent input:focus {
+    border-bottom: 1px solid blue;
+}
+
+.updateStudent button {
+    width: 100px;
+    cursor: pointer;
+    margin: 10px;
+    margin-bottom: 0;
+    border: none;
+    transition: 0.3s;
+    border: 1px solid var(--primary-color);
+    background-color: rgb(87, 87, 250);
+    color: var(--white-color);
+}
+
+.updateStudent p {
+    text-align: right;
+    cursor: pointer;
+}
+
+.updateStudent p:hover {
+    color: blue;
+}
+
+/* Modal Delete student */
+.deleteStudent .modal_content {
+    width: 250px;
+}
+
+.deleteStudent .modal_content button:hover {
+    background-color: transparent;
+}
+
+.deleteStudent h2 {
+    width: 200px;
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.modalUpdateSuccess h2 {
+    animation: unset;
+    border-left: unset;
+}
+
+.deleteStudent button {
+    margin-top: 30px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    transition: 0.3s;
+}
+
+.footer {
+    background-color: rgb(233, 231, 231);
+}
+
+
+/* Tablet */
+@media (min-width: 741px) and (max-width: 1350px) {}
+
+/* Mobile */
+@media (max-width: 740px) {
+    .tablePC{
+        display: none;
+    }
+
+    .modal_logOut {
+        z-index: 4;
+    }
+
+    .modal_logOut .modal_content {
+        width: 250px;
+    }
+
+    .home_page form {
+        padding: 10px 10px 30px 10px;
+        height: 100%;
+    }
+
+    .tableMobile {
+        display: block;
+    }
+
+    .home_page .LogOut {
+        display: none;
+    }
+
+    .home_page .option {
+        position: fixed;
+        padding: 10px;
+        z-index: 1;
+        display: block;
+    }
+
+    .home_page .userImage h2 {
+        animation:  unset;
+    }
+
+    .home_page .theme {
+        margin-top: 80px;
+    }
+
+    .home_page .searchStudent {
+        margin-top: 20px;
+        border: 1px solid grey;
+        height: 35px;
+        padding: 2px;
+        width: 300px;
+        display: flex;
+        border-radius: 5px;
+        justify-content: space-between;
+    }
+
+    .home_page .searchStudent:hover {
+        border: 1px solid var(--primary-color);
+    }
+    
+    .home_page .searchStudent input {
+        border: none;
+        width: 70%;
+    }
+
+    .home_page .searchStudent input:focus {
+        border: none;
+    }
+    .home_page .searchStudent button {
+        padding: 2px 7px;
+        margin: 0;
+    }
+
+    .home_page .modal_content{
+        width: 90%;
+    }
+
+    .home_page .modal_content button {
+        width: 100px;
+    }
+
+    .deleteStudent .modal_content,
+    .modalUpdateSuccess .modal_content,
+    .modalAddSuccess .modal_content {
+        width: 250px;
+    }
+
+    .gridStudent {
+        justify-content: space-between;
+    }
+
+    .studentDetail .modal_content {
+        width: 250px;
+    }
+}

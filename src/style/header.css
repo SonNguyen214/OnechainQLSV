@@ -1,0 +1,196 @@
+.header {
+    height: 700px;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    align-items: center;
+    padding: 20px 2%;
+    display: block;
+    background-color: #fff;
+    border-right: 1px solid grey;
+    box-shadow: 1px 1px 5px;
+    width: 200px;
+    max-width: 100%;
+    animation: showHeader_PC 0.7s ease-in;
+}
+    
+.header h3 {
+    margin-top: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.userImage {
+    margin: auto;
+}
+
+.header img {
+    width: 100px;
+    border-radius: 50%;
+    height: 100px;
+    border: 1px solid var(--primary-color);
+}
+
+.header span {
+    padding: 5px 8px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 5px;
+    border: 1px solid var(--primary-color);
+    transition: 0.3s;
+}
+
+.userImage h3 {
+    color: var(--primary-color);
+}
+
+.header .homeTown {
+    margin-bottom: 10px;
+}
+
+.header span:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+@keyframes showInfor{
+    from {
+        opacity: 0;
+        top: 100px;
+    }
+    to {
+        opacity: 1;
+        top: 55px;
+    }
+}
+
+.header .close_header {
+    position: absolute;
+    top: -7px;
+    right: 2px;
+    background-color: transparent;
+    color: #333;
+}
+
+.showUserInfo_PC {
+    position: fixed;
+    top: 4px;
+    font-size: 30px;
+    left: 20px;
+    z-index: 2;
+}
+
+.showUserInfo_PC img {
+    transition: 0.3s;
+}
+
+.showUserInfo_PC img:active {
+    border: 3px solid var(--primary-color);
+}
+
+@keyframes showHeader_PC {
+    from {
+        opacity: 0;
+        left: -30%;
+    }
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+/* updateUser */
+.updateUser .userImage {
+    margin-bottom: 20px;
+}
+
+.updateUser input,
+.updateUser select, 
+.updateUser option{
+    padding: 3px 7px;
+    width: 100%;
+    margin-bottom: 0;
+    outline: none;
+    border-radius: 5px;
+}
+
+.updateUser select,
+.updateUser option {
+    width: 120px;
+    margin-left: 5px;
+}
+
+.showUserInfo_Mobile {
+    display: none;
+}
+
+
+.header .Out {
+    display: none;
+}
+
+/* Moblie */
+@media (max-width: 740px){
+    .header {
+        height: auto;
+        box-shadow: unset;
+        position: fixed;
+        top: 0;
+        right: 0;
+        animation: showHeader 0.5s ease-in-out;
+    }
+
+    .showUserInfo_PC {
+        display: none;
+    }
+
+    .showUserInfo_Mobile {
+        position: fixed;
+        top: 10px;
+        font-size: 30px;
+        right: 5%;
+        z-index: 2;
+        display: block;
+    }
+
+     @keyframes showHeader {
+        from {
+            opacity: 0;
+            right: -50%;
+        }
+        to {
+            opacity: 1;
+            right: 0;
+        }
+    }
+
+    .header h2 {
+        margin-top: 20px;
+    }
+
+    .header .infor .close_header {
+        display: block;
+        position: absolute;
+        top: 7px;
+        transform: translateY(-50%);
+        left: -170px; 
+        align-items: center;
+    }
+
+    .header .infor div:first-child span {
+       height: 100%;
+       border-radius: unset;
+    }
+
+    .header .Out {
+        display: block;
+    }
+
+    .header .modalImage .modal_content {
+        top: unset;
+        left: unset;
+    }
+
+} 
