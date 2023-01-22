@@ -66,17 +66,17 @@ function Header(props) {
   };
 
   const checkUserName = () => {
-    if (userName === "") {
-      seterrorUserName("Không được để trống");
+    if (userName.length === 0 || userName.length > 30) {
+      seterrorUserName("Tên không hợp lệ");
     } else {
       seterrorUserName("");
     }
   };
 
   const checkUserAge = () => {
-    if (userAge === "") {
+    if (userAge.length === "") {
       seterrorUserAge("Không được để trống");
-    } else if (userAge.length > 3 || userAge > 200) {
+    } else if (userAge.length > 3 || userAge > 100) {
       seterrorUserAge("Tuổi không hợp lệ");
     } else {
       seterrorUserAge("");
@@ -84,7 +84,7 @@ function Header(props) {
   };
 
   const checkUserGender = () => {
-    if (userGender === "") {
+    if (userGender.length === "") {
       seterrorGender("Không được để trống");
     } else {
       seterrorGender("");
@@ -92,9 +92,10 @@ function Header(props) {
   };
 
   const checkPhoneNumber = () => {
-    if (phoneNumber === "") {
+    const vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/.test(phoneNumber)
+    if (phoneNumber.length === "") {
       seterrorPhoneNumber("Không được để trống");
-    } else if (phoneNumber.length < 10 || phoneNumber.length > 11) {
+    } else if (!vnf_regex || phoneNumber.length < 10 || phoneNumber.length > 11) {
       seterrorPhoneNumber("Số điện thoại không hợp lệ");
     } else {
       seterrorPhoneNumber("");
@@ -306,7 +307,7 @@ function Header(props) {
                           />{" "}
                           <small>{errorUserName}</small>
                           <input
-                            type="text"
+                            type="number"
                             className="userAge"
                             placeholder="Tuổi"
                             value={userAge}

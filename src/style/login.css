@@ -90,6 +90,7 @@
     .login{
         width: 90%;
         display: block;
+        height: auto    ;
     }
 
     .leftLogin {
@@ -100,7 +101,6 @@
         width: 100%;
         text-align: center;
     }
-
 
     .rightLogin span {
         text-align: left;

@@ -43,51 +43,59 @@ form {
     padding: 20px;
     width: 100%;
     height: auto;
+    background-color: white;
+
 }
 
 .home_page .option {
     height: 60px;
     margin-bottom: 20px;
     position: fixed;
-    background-color: white;
     border-bottom: 1px solid var(--primary-color);
     align-items: center;
-}
-
-.home_page .searchByCode {
-    border-bottom: 1px solid grey;
-}
-
-.home_page .searchByCode:focus {
-    border-bottom: 1px solid var(--primary-color);
 }
 
 .home_page .option .LogOut {
     margin-bottom: 0;
 }
 
+
 .home_page form {
     box-shadow: #fff 1px 1px 5px 2px;
     width: auto;
     max-width: 100%;
+    position: relative;
     height: 470px;
     padding: 20px;
 }
 
 .home_page form .pagination {
     position: absolute;
-    bottom: 50px;
     left: 50%;
-    color: #333;
     transform: translateX(-50%);
+    bottom: 10px;
 }
 
 .home_page form .pagination button {
     color:  #333;
 }
 
+.home_page .searchStudent {
+    border: 1px solid var(--primary-color);
+    margin-bottom: 10px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 5px;
+    align-items: center;
+}
+
+.home_page .searchStudent input {
+    border: none;
+}
+
 .home_page .btnSearchByCode {
-    padding: 5px 10px;
+    padding: 0px 15px;
     font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
@@ -172,7 +180,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .home_page thead {
-    background: rgb(117, 247, 252)
+    color: var(--primary-color);  
 }
 
 .home_page th,
@@ -202,12 +210,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .home_page tr {
     transition: 0.3s;
-    border:1px solid grey ;
 }
 
 .home_page tr:hover {
-    background-color: #fff;
-    box-shadow: 1px 1px 3px;
+    background-color: rgb(233, 233, 233);
 }
 
 .home_page thead tr:not(hover) {
@@ -215,7 +221,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .home_page thead tr:hover {
-    background: rgb(117, 247, 252); 
+    background: unset;
 }
 
 .home_page tbody {
@@ -255,7 +261,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .home_page .theme {
     display: flex;
-    margin-top: 80px;
     margin-bottom: 20px;
 }
 
@@ -345,8 +350,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .home_page .gridStudent {
     flex-wrap: wrap;
-    justify-content: space-around;
     margin-bottom: 20px;
+    justify-content: unset;
 }
 
 .home_page .item {
@@ -617,34 +622,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         margin-top: 80px;
     }
 
-    .home_page .searchStudent {
-        margin-top: 20px;
-        border: 1px solid grey;
-        height: 35px;
-        padding: 2px;
-        width: 300px;
-        display: flex;
-        border-radius: 5px;
-        justify-content: space-between;
-    }
-
-    .home_page .searchStudent:hover {
-        border: 1px solid var(--primary-color);
-    }
-    
-    .home_page .searchStudent input {
-        border: none;
-        width: 70%;
-    }
-
-    .home_page .searchStudent input:focus {
-        border: none;
-    }
-    .home_page .searchStudent button {
-        padding: 2px 7px;
-        margin: 0;
-    }
-
     .home_page .modal_content{
         width: 90%;
     }
@@ -666,4 +643,45 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .studentDetail .modal_content {
         width: 250px;
     }
+
+    .home_page .item {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+    }
+    
+    .home_page .searchAndFilter {
+        display: block;
+        width: 100%;
+    }
+
+    .home_page .searchStudent {
+        border: 1px solid grey;
+        height: 40px;
+        padding: 2px;
+        width: 100%;
+        display: flex;
+        background-color: #fff;
+        border-radius: 5px;
+        justify-content: space-between;
+    }
+
+    .home_page .searchStudent:hover {
+        border: 1px solid var(--primary-color);
+    }
+    
+    .home_page .searchStudent input {
+        border: none;
+
+        width: 70;
+    }
+
+    .home_page .searchStudent input:focus {
+        border: none;
+    }
+    .home_page .searchStudent button {
+        padding: 2px 7px;
+        margin: 0;
+    }
+
 }

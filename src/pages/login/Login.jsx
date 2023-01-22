@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import db from "../../firebase/firebase";
 import "../../style/login.css";
-import { UserOutlined } from "@ant-design/icons";
 
 function Login(props) {
   const events = db.collection("user");

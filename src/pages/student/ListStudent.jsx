@@ -58,7 +58,7 @@ function ListStudent(props) {
   const [proccess, setProccess] = useState(0);
   const [dateJoinUpdate, setDateJoinUpdate] = useState();
   const [currentPage, setCurrentPage] = useState(1);
-  const studentPerPage = 5
+  const studentPerPage = 6;
 
   const indexOfLastStudent = currentPage * studentPerPage;
   const indexOfFirstStudent = indexOfLastStudent - studentPerPage;
@@ -175,7 +175,7 @@ function ListStudent(props) {
   };
 
   const checkName = () => {
-    if (studentNameUpdate.length === 0) {
+    if (studentNameUpdate.length === 0 || studentNameUpdate.length > 40) {
       seterrorNameUpdate("Không được để trống");
     } else if (studentNameUpdate.length > 40 || studentNameUpdate.length <= 1) {
       seterrorNameUpdate("Tên không hợp lệ");
@@ -200,14 +200,12 @@ function ListStudent(props) {
     }
   };
   const checkPhoneNumberUpdate = () => {
-    const regexPhoneNumber =
-      /^(\+?[01])?[-.\s]?\(?[1-9]\d{2}\)?[-.\s]?\d{3}[-.\s]?\d{4}/.test(
-        phoneNumberUpdate
-      );
+    const vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/.test(phoneNumberUpdate);
+
     if (phoneNumberUpdate === "") {
       seterrorPhoneNumberUpdate("Không được để trống");
     } else if (
-      !regexPhoneNumber ||
+      !vnf_regex ||
       phoneNumberUpdate.length < 10 ||
       phoneNumberUpdate.length > 12
     ) {
@@ -433,48 +431,46 @@ function ListStudent(props) {
         </p>
       </div>
 
-      <div
-        style={{
-          margin: "0 2%",
-        }}
-      >
+      <div  style={{
+          margin: "0px 2%",
+          marginTop: '80px'
+        }}>
         <div>
-          <div className="theme">
-            {displayGrid ? (
-              <div
-                style={{
-                  color: "rgb(252, 52, 62)",
-                  border: "1px solid rgb(252, 52, 62)",
-                }}
-                onClick={showGridStudent}
-              >
-                Hiển thị sinh viên dưới dạng thẻ
-              </div>
-            ) : (
-              <div onClick={showGridStudent}>
-                Hiển thị sinh viên dưới dạng thẻ
-              </div>
-            )}
-
-            {displayTable ? (
-              <div
-                style={{
-                  color: "rgb(252, 52, 62)",
-                  border: "1px solid rgb(252, 52, 62)",
-                }}
-                onClick={showTableStudent}
-              >
-                Hiển thị sinh viên dưới dạng bảng
-              </div>
-            ) : (
-              <div onClick={showTableStudent}>
-                Hiển thị sinh viên dưới dạng bảng
-              </div>
-            )}
-          </div>
-
           {/* search StudentByCode */}
-          <div className="flex" style={{}}>
+          <div className="flex searchAndFilter">
+            <div className="theme">
+              {displayGrid ? (
+                <div
+                  style={{
+                    color: "rgb(252, 52, 62)",
+                    border: "1px solid rgb(252, 52, 62)",
+                  }}
+                  onClick={showGridStudent}
+                >
+                  Hiển thị sinh viên dưới dạng thẻ
+                </div>
+              ) : (
+                <div onClick={showGridStudent}>
+                  Hiển thị sinh viên dưới dạng thẻ
+                </div>
+              )}
+
+              {displayTable ? (
+                <div
+                  style={{
+                    color: "rgb(252, 52, 62)",
+                    border: "1px solid rgb(252, 52, 62)",
+                  }}
+                  onClick={showTableStudent}
+                >
+                  Hiển thị sinh viên dưới dạng bảng
+                </div>
+              ) : (
+                <div onClick={showTableStudent}>
+                  Hiển thị sinh viên dưới dạng bảng
+                </div>
+              )}
+            </div>
             <div className="searchStudent">
               <input
                 className="searchByCode"
@@ -496,7 +492,6 @@ function ListStudent(props) {
 
             <div className="filterStudent ">
               <select
-                value={filterStatus}
                 onChange={(e) => handleChangeStatusFilter(e)}
               >
                 <option value="">Chọn trạng thái</option>
@@ -508,7 +503,6 @@ function ListStudent(props) {
               </select>
 
               <select
-                value={fillterMajor}
                 onChange={(e) => handleChangeMajorFilter(e)}
                 name=""
                 id=""
@@ -530,73 +524,71 @@ function ListStudent(props) {
             detailStudent.map((element, index) => {
               return (
                 <div key={index} className="studentDetail userImage">
-                   
-                    <div
-                      className="modal_content "
-                      style={{ position: "relative" }}
-                    >
-                      <CloseOutlined
-                        style={{
-                          position: "absolute",
-                          top: "5px",
-                          right: "5px",
-                          fontSize: "20px",
-                          cursor: "pointer",
-                        }}
-                        onClick={() => setInforStudent(false)}
+                  <div
+                    className="modal_content "
+                    style={{ position: "relative" }}
+                  >
+                    <CloseOutlined
+                      style={{
+                        position: "absolute",
+                        top: "5px",
+                        right: "5px",
+                        fontSize: "20px",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => setInforStudent(false)}
+                    />
+                    <h2 style={{ fontSize: "19px" }}>Thông tin sinh viên</h2>
+                    {element.image ? (
+                      <img src={element.image} alt="" />
+                    ) : (
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                        alt=""
                       />
-                      <h2 style={{ fontSize: "19px" }}>Thông tin sinh viên</h2>
-                      {element.image ? (
-                        <img src={element.image} alt="" />
-                      ) : (
-                        <img
-                          src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-                          alt=""
-                        />
-                      )}
-                      <h3
-                        onClick={() => toggleModalImage(element.id)}
-                        style={{
-                          cursor: "pointer",
-                        }}
-                      >
-                        Thay đổi ảnh
-                      </h3>
-                      <div>
-                        <strong>Mã sinh viên: </strong> {element.code}
-                      </div>
-                      <div>
-                        <strong>Họ tên: </strong> {element.name}
-                      </div>
-                      <div>
-                        <strong>Tuổi: </strong> {element.age}
-                      </div>
-                      <div>
-                        <strong>Trạng thái: </strong>
-                        {element.status}
-                      </div>
-                      <div>
-                        <strong>Email: </strong> {element.email}
-                      </div>
-                      <div>
-                        <strong>Ngành học: </strong> {element.major}
-                      </div>
-                      <div>
-                        <strong>Số điện thoại: </strong> {element.phoneNumber}
-                      </div>
-                      <div>
-                        <strong>Ngày tham gia: </strong> {element.dateJoin}
-                      </div>
-                      <div>
-                        <strong>Quên quán: </strong> {element.homeTown}
-                      </div>
-                      <button onClick={() => showModalUpdate(element)}>
-                        {" "}
-                        Sửa thông tin
-                      </button>
+                    )}
+                    <h3
+                      onClick={() => toggleModalImage(element.id)}
+                      style={{
+                        cursor: "pointer",
+                      }}
+                    >
+                      Thay đổi ảnh
+                    </h3>
+                    <div>
+                      <strong>Mã sinh viên: </strong> {element.code}
                     </div>
+                    <div>
+                      <strong>Họ tên: </strong> {element.name}
+                    </div>
+                    <div>
+                      <strong>Tuổi: </strong> {element.age}
+                    </div>
+                    <div>
+                      <strong>Trạng thái: </strong>
+                      {element.status}
+                    </div>
+                    <div>
+                      <strong>Email: </strong> {element.email}
+                    </div>
+                    <div>
+                      <strong>Ngành học: </strong> {element.major}
+                    </div>
+                    <div>
+                      <strong>Số điện thoại: </strong> {element.phoneNumber}
+                    </div>
+                    <div>
+                      <strong>Ngày tham gia: </strong> {element.dateJoin}
+                    </div>
+                    <div>
+                      <strong>Quên quán: </strong> {element.homeTown}
+                    </div>
+                    <button onClick={() => showModalUpdate(element)}>
+                      {" "}
+                      Sửa thông tin
+                    </button>
                   </div>
-                
+                </div>
               );
             })}
           {displayImage && (
@@ -667,7 +659,9 @@ function ListStudent(props) {
             </div>
           )}
           <div style={{ marginBottom: "10px" }}>
-            <Pagination className="pagination"
+            <Pagination
+              className="pagination"
+              current={currentPage}
               defaultCurrent={currentPage}
               total={student.length}
               onChange={onChangePage}
@@ -847,6 +841,7 @@ function ListStudent(props) {
           </div>
         </div>
       )}
+
       {displayDontFindStudent && (
         <div className="modalUpdateSuccess">
           <div className="modal_content">

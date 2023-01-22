@@ -28,7 +28,7 @@ function AddStudent(props) {
 
   useEffect(() => {
     getData();
-  },[]);
+  }, []);
 
   //Get Data from DB
   const getData = () => {
@@ -121,8 +121,8 @@ function AddStudent(props) {
   const checkID = () => {
     if (studentCode === "") {
       seterrorID("Không được để trống");
-    } else if (studentCode.length > 10) {
-      seterrorID("Không nhập quá 10 kí tự");
+    } else if (studentCode.length < 4 ||studentCode.length > 10) {
+      seterrorID("Nhập từ 4 - 10 kí tự");
     } else {
       seterrorID("");
     }
@@ -140,10 +140,9 @@ function AddStudent(props) {
     }
   };
   const checkName = () => {
-    let result = /^[a-zA-Z ]+$/.test(studentName);
     if (studentName === "") {
       seterrorName("Không được để trống");
-    } else if (!result) {
+    } else if ( studentName.length < 2 || studentName.length > 30) {
       seterrorName("Tên người dùng không hợp lệ");
     } else {
       seterrorName("");
@@ -164,7 +163,7 @@ function AddStudent(props) {
     } else {
       seterrorStatus("");
     }
-  }
+  };
   const checkGender = () => {
     if (gender === "") {
       seterrorGender("Không được để trống");
@@ -180,21 +179,24 @@ function AddStudent(props) {
     }
   };
   const checkPhoneNumber = () => {
-    const regexPhoneNumber =
-      /^(\+?[01])?[-.\s]?\(?[1-9]\d{2}\)?[-.\s]?\d{3}[-.\s]?\d{4}/.test(
-        phoneNumber
-      );
+    const regexPhoneNumber = /((09|03|07|08|05|01)+([0-9]{8})\b)/g.test(
+      phoneNumber
+    );
     if (phoneNumber === "") {
       seterrorPhoneNumber("Không được để trống");
-    } else if (!regexPhoneNumber || phoneNumber.length < 10 || phoneNumber.length >12) {
+    } else if (
+      !regexPhoneNumber ||
+      phoneNumber.length < 10 ||
+      phoneNumber.length > 12
+    ) {
       seterrorPhoneNumber("Số điện thoại không hợp lệ");
     } else {
       seterrorPhoneNumber("");
     }
   };
   const checkHomeTown = () => {
-    if (studentHomeTown === "") {
-      seterrorHomeTown("Không được để trống");
+    if (studentHomeTown === "" || studentHomeTown.length > 20) {
+      seterrorHomeTown("Quê quán không hợp lệ");
     } else {
       seterrorHomeTown("");
     }
@@ -239,7 +241,7 @@ function AddStudent(props) {
               />{" "}
               <small>{errorName}</small>
               <input
-                type="text"
+                type="number"
                 className="studentAge"
                 placeholder="Tuổi"
                 onBlur={checkAge}
@@ -319,8 +321,7 @@ function AddStudent(props) {
             onChange={(e) => setstudentHomeTown(e.target.value)}
           />
           <small>{errorHomeTown}</small>
-
-          <div style={{textAlign: 'left'}}>Ngày nhập học</div>
+          <div style={{ textAlign: "left" }}>Ngày nhập học</div>
           <input type="date" onChange={(e) => setDateJoin(e.target.value)} />
           <button onClick={submit}>Thêm</button>
           <button onClick={props.toggleModalAdd}>Thoát</button>
